@@ -60,6 +60,8 @@ SMODS.Joker({
 		end
 		if context.joker_main then
 			return {
+				message = "X" .. tostring(card.ability.extra.curr_xmult),
+				colour = G.C.MULT,
 				Xmult_mod = card.ability.extra.curr_xmult,
 			}
 		end
@@ -69,3 +71,4 @@ SMODS.Joker({
 --- TODO: Recalculate (G.GAME.dollars - card.ability.extra.initial < 0) based on number of SHELDONs in hand
 --- TODO: Add an in_pool parameter so that SHELDON can show up in the Shop
 --- TODO: Add localization files (only if mod expands?)
+--- TODO: Add README.md
