@@ -65,3 +65,7 @@ SMODS.Joker({
 		end
 	end,
 })
+
+--- TODO: Recalculate (G.GAME.dollars - card.ability.extra.initial < 0) based on number of SHELDONs in hand
+--- TODO: Add an in_pool parameter so that SHELDON can show up in the Shop
+--- TODO: Add localization files (only if mod expands?)
