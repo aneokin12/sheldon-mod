@@ -1,3 +1,4 @@
+--- SHELDON MOD SHELDON MOD SHELDON MOD ---
 SMODS.Atlas({
 	key = "SheldonJoker",
 	path = "SheldonJoker.png",
@@ -36,27 +37,30 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if context.setting_blind and not context.blueprint then
-			if G.GAME.dollars - card.ability.extra.initial > 0 then
+			ease_dollars(-card.ability.extra.initial)
+			card_eval_status_text(
+				card,
+				"jokers",
+				nil,
+				percent,
+				nil,
+				{ message = "-$" .. tostring(card.ability.extra.initial), colour = G.C.MONEY }
+			)
+			if G.GAME.dollars - card.ability.extra.initial < 0 then
 				card.ability.extra.curr_xmult = 1
-				return {
-					message = "No Gold!",
-					colour = C.G.RED,
-					dollars = G.GAME.dollars - card.ability.extra.initial,
-					card = card,
-				}
+				card_eval_status_text(card, "jokers", nil, percent, nil, { message = "Reset!", colour = G.C.RED })
 			else
 				card.ability.extra.curr_xmult = card.ability.extra.curr_xmult + card.ability.extra.initial
-				return {
-					message = "Gimmee!",
-					colour = C.G.GREEN,
-					dollars = G.GAME.dollars - card.ability.extra.initial,
-					card = card,
-				}
+				card_eval_status_text(card, "jokers", nil, percent, nil, { message = "Gimme!", colour = G.C.GREEN })
 			end
+			return {
+				Xmult_mod = card.ability.extra.curr_xmult,
+				card = card,
+			}
 		end
 		if context.joker_main then
 			return {
-				xmult = card.ability.extra.curr_xmult,
+				Xmult_mod = card.ability.extra.curr_xmult,
 			}
 		end
 	end,
