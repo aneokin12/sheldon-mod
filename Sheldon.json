@@ -1,0 +1,14 @@
+{
+	"id": "Sheldon_Mod",
+	"name": "Sheldon",
+	"display_name": "Sheldon",
+	"author": ["Aneokin"],
+	"description": "Happy birthday Sheldon! Hope you get a kick out of this, I had a lot of fun making it.",
+	"prefix": "shelly",
+	"main_file": "Sheldon.lua",
+	"priority": 0,
+	"badge_colour": "B2AC88",
+	"badge_text_colour": "FFFFFF",
+	"version": "1.0.0",
+	"dependencies": []
+}
