@@ -66,6 +66,9 @@ SMODS.Joker({
 			}
 		end
 	end,
+	set_badges = function(self, card, badges)
+		badges[#badges + 1] = create_badge("Author: Aneokin", G.C.GREEN, G.C.WHITE, 1)
+	end,
 })
 
 --- TODO: Recalculate (G.GAME.dollars - card.ability.extra.initial < 0) based on number of SHELDONs in hand
