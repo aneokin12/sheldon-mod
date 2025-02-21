@@ -22,7 +22,7 @@ SMODS.Joker({
 	},
 	atlas = "SheldonJoker",
 	pos = { x = 0, y = 0 },
-	rarity = 4,
+	rarity = 3,
 	config = {
 		extra = {
 			initial = 2.24,
